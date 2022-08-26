@@ -68,7 +68,6 @@ const updateNumbers = (obj) => {
 };
 
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -137,15 +136,24 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) =>
+const hasChildrenValues = (arr, character) => {
   // Object.values(arr).some((character) => {
   //   if (arr.character.children.length > 0) {
   //     return true;
   //   }
   //   return false;
   // });
-// Solution code here...
-
+  // Solution code here...
+  let hasChildren = false;
+  arr.forEach((person, index) => {
+    if (person.name === character) {
+      const values = Object.values(person);
+      return values.some(v => Array.isArray(v) ? hasChildren = true : hasChildren = false);
+    }
+  }
+  );
+  return hasChildren;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
