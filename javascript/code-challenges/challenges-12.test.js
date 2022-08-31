@@ -70,7 +70,7 @@ Return either true or false.
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
 
-const validateEmail = (email) => /(^[a-zA-Z]*)[@.][a-zA-Z]*.((.net)|(.com)|(.org))|(^[a-zA-Z]*)[.][a-zA-Z]*[@]([a-zA-Z]*).((.net)|(.com)|(.org))/.test(email) ? true : false;
+const validateEmail = (email) => /(^(?!(\.@)|(@))((([a-zA-Z]*)(?!\.))|(([a-zA-Z]*)[.](?!@))[a-zA-Z]*|(([a-zA-Z]*)(?!\.))|(([a-zA-Z]*)(?!\.)))(([@][a-zA-Z]*.\.net$)|([@][a-zA-Z]*.\.com$)|([@][a-zA-Z]*.\.org$)))/.test(email) ? true : false;
 // Solution code here...
 
 
