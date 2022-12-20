@@ -21,7 +21,7 @@ Write a function named toTitleCase that takes in an array of strings and returns
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
-const toTitleCase = (arr) => arr.map (v => v.charAt(0).toUpperCase() + v.substr(1));
+const toTitleCase = (arr) => arr.map(v => v.charAt(0).toUpperCase() + v.substr(1));
 // Solution code here...
 
 
@@ -98,7 +98,7 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  return arr.filter((char) => parseInt(char.height) > 172 ).map((char) => char.name).join(' - ');
+  return arr.filter((char) => parseInt(char.height) > 172).map((char) => char.name).join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,7 +115,7 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => arr.sort((a,b) => a[property] > b[property] ? 1 : -1);
+const sortBy = (property, arr) => arr.sort((a, b) => a[property] > b[property] ? 1 : -1);
 
 // Solution code here...
 
@@ -134,9 +134,9 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
-  if (/^(https:)(\/\/)/.test(url) === true){
+  if (/^(https:)(\/\/)/.test(url) === true) {
     return true;
-  } else {return false;}
+  } else { return false; }
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -159,40 +159,42 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
-  // let flatArray = board.flat();
-  // if (
-  //   ( (flatArray[0] === flatArray[1] === flatArray[2]) && !flatArray[0] === '') |
-  //   ( (flatArray[3] === flatArray[4] === flatArray[5]) && !flatArray[3] === '') |
-  //   ( (flatArray[6] === flatArray[7] === flatArray[8]) && !flatArray[6] === '') |
-  //   ( (flatArray[0] === flatArray[3] === flatArray[6]) && !flatArray[0] === '') |
-  //   ( (flatArray[1] === flatArray[4] === flatArray[7]) && !flatArray[1] === '') |
-  //   ( (flatArray[2] === flatArray[5] === flatArray[8]) && !flatArray[2] === '') |
-  //   ( (flatArray[0] === flatArray[4] === flatArray[8]) && !flatArray[0] === '') |
-  //   ( (flatArray[2] === flatArray[4] === flatArray[6]) && !flatArray[2] === '')
-  // )
-
-  //   console.log(flatArray);
+  let flatArray = board.flat();
+  console.log(flatArray[0],flatArray[3],flatArray[6]);
+  if (
+    ( (flatArray[0] === flatArray[1] === flatArray[2]) && flatArray[0] !== '') ||
+    ( (flatArray[3] === flatArray[4] === flatArray[5]) && flatArray[3] !== '') ||
+    ( (flatArray[6] === flatArray[7] === flatArray[8]) && flatArray[6] !== '') ||
+    ( (flatArray[0] === flatArray[3] === flatArray[6]) && flatArray[3] !== '') ||
+    ( (flatArray[1] === flatArray[4] === flatArray[7]) && flatArray[1] !== '') ||
+    ( (flatArray[2] === flatArray[5] === flatArray[8]) && flatArray[2] !== '') ||
+    ( (flatArray[0] === flatArray[4] === flatArray[8]) && flatArray[0] !== '') ||
+    ( (flatArray[2] === flatArray[4] === flatArray[6]) && flatArray[2] !== '')
+  ) {
+    return true;
+  } return false;
 
   //great help from garfield, he used stackover flow and the logic below to explain it to me. i still want to know why my approach above doesn't work. i will ask tomorrow and add it to my retro
 
-  const check = (row1, col1, row2, col2, row3, col3) => {
-    return board[row1][col1] !== '' &&
-      board[row1][col1] === board[row2][col2] &&
-    board[row2][col2] === board[row3][col3];
+  //   const check = (row1, col1, row2, col2, row3, col3) => {
+  //     return board[row1][col1] !== '' &&
+  //       board[row1][col1] === board[row2][col2] &&
+  //     board[row2][col2] === board[row3][col3];
 
-  };
-  if (check(0, 0, 0, 1, 0, 2)) return true;
-  if (check(1, 0, 1, 1, 1, 2)) return true;
-  if (check(2, 0, 2, 1, 2, 2)) return true;
+  //   };
+  //   if (check(0, 0, 0, 1, 0, 2)) return true;
+  //   if (check(1, 0, 1, 1, 1, 2)) return true;
+  //   if (check(2, 0, 2, 1, 2, 2)) return true;
 
-  if (check(0, 0, 1, 0, 2, 0)) return true;
-  if (check(0, 1, 1, 1, 2, 1)) return true;
-  if (check(0, 2, 1, 2, 2, 2)) return true;
+  //   if (check(0, 0, 1, 0, 2, 0)) return true;
+  //   if (check(0, 1, 1, 1, 2, 1)) return true;
+  //   if (check(0, 2, 1, 2, 2, 2)) return true;
 
-  if (check(0, 0, 1, 1, 2, 2)) return true;
-  if (check(0, 2, 1, 1, 2, 0)) return true;
+  //   if (check(0, 0, 1, 1, 2, 2)) return true;
+  //   if (check(0, 2, 1, 1, 2, 0)) return true;
 
-  return false;
+  //   return false;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
