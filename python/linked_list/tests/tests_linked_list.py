@@ -1,4 +1,4 @@
-import pytest
+
 from my_work.linked_list import LinkedList
 
 
