@@ -20,4 +20,6 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
-- [Code Challenge: Class 01](./python/array_reverse/README.md)
+- [Code Challenge: Class 01](./python/docs/array_reverse/README.md)
+- [Code Challenge: Class 07](./python/docs/linked_list_kth/README.md)
+- [Code Challenge: Class 08](./python/docs/linked_list_zip/README.md)
