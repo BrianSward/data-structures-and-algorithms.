@@ -11,10 +11,10 @@ class PseudoQueue:
         self.inbox.push(value)
 
     def dequeue(self):
-        if self.outbox.is_empty:
-            while not self.inbox.is_empty:
+        if self.outbox.is_empty():
+            while not self.inbox.is_empty():
                 self.outbox.push(self.inbox.pop())
             return_me = self.outbox.pop()
-            while not self.outbox.is_empty:
+            while not self.outbox.is_empty():
                 self.inbox.push(self.outbox.pop())
         return return_me

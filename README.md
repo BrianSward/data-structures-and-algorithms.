@@ -23,3 +23,6 @@ To run your tests
 - [Code Challenge: Class 01](./python/docs/array_reverse/README.md)
 - [Code Challenge: Class 07](./python/docs/linked_list_kth/README.md)
 - [Code Challenge: Class 08](./python/docs/linked_list_zip/README.md)
+- [Code Challenge: Class 11](./python/docs/stack_queue_pseudo/README.md)
+- [Code Challenge: Class 12](./python/docs/stack_queue_animal_shelter/README.md)
+- [Code Challenge: Class 13](./python/docs/stack_queue_brackets/README.md)
