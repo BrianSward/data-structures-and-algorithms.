@@ -26,3 +26,4 @@ To run your tests
 - [Code Challenge: Class 11](./python/docs/stack_queue_pseudo/README.md)
 - [Code Challenge: Class 12](./python/docs/stack_queue_animal_shelter/README.md)
 - [Code Challenge: Class 13](./python/docs/stack_queue_brackets/README.md)
+- [Code Challenge: Class 14](./python/docs/trees/README.md)
