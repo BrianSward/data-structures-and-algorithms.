@@ -5,7 +5,7 @@ class Node:
         self.right = None
 
 
-class BinaryTree():
+class BinaryTree:
     def __init__(self):
         self.root = None
 
@@ -41,6 +41,7 @@ class BinaryTree():
         """
         # method
         # initially start at root
+        # noinspection DuplicatedCode
         if root is None:
             root = self.root
         # root
@@ -82,13 +83,42 @@ class BinaryTree():
 
         return nodes
 
+    # def find_maximum_value(self):
+    #     if not self.root:
+    #         return float("-inf") # empty tree has no maximum value
+    #     else:
+    #         max_value = self.root.value
+    #     if self.root.left:
+    #         max_value = max(max_value, self.left.find_maximum_value())
+    #     if self.root.right:
+    #         max_value = max(max_value, self.right.find_maximum_value())
+    #
+    #     return max_value
+
+    def find_maximum_value(self, root=None, nodes=None):
+        """
+        borrowed heavily from above methods but altered output
+        """
+        # method
+        # initially start at root
+        if root is None:
+            root = self.root
+        if nodes is None:
+            nodes = []
+        nodes.append(root.value)
+        if root.left:
+            self.pre_order(root.left, nodes)
+        if root.right:
+            self.pre_order(root.right, nodes)
+        return max(nodes)
+
 
 if __name__ == "__main__":
     """
             1
-          /   \
+          /
          2     3
-        / \   / \
+        /    /
        4   5 6   7
     """
     bt_1 = BinaryTree()
