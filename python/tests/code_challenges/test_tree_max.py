@@ -13,3 +13,16 @@ def test_max_val():
     expected = 30
 
     assert actual == expected
+
+
+# @pytest.mark.skip("TODO")
+def test_max_val_fail():
+    tree = BinaryTree()
+    tree.root = Node(10)
+    tree.root.left = Node(30)
+    tree.root.right = Node(-7)
+
+    actual = tree.find_maximum_value()
+    expected = 10
+
+    assert actual != expected
