@@ -17,15 +17,17 @@ class Queue:
         self.rear = None
 
     def enqueue(self, val):
+        # jb: refactored to fix hard to find bug
+        # jb: tried to keep it as close as possible to old
         new_node = Node(val)
+
         if self.front is None:
-            self.head = new_node
-        if self.rear:
-            self.rear.next = Node(val)
-            self.rear = self.rear.next
+            self.front = new_node
+            self.rear = new_node
             return
-        self.rear = self.front = Node(val)
-        # method body here
+
+        self.rear.next = new_node
+        self.rear = self.rear.next
 
     def peek(self):
         if self.front is None:
