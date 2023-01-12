@@ -17,6 +17,9 @@ class Queue:
         self.rear = None
 
     def enqueue(self, val):
+        new_node = Node(val)
+        if self.front is None:
+            self.head = new_node
         if self.rear:
             self.rear.next = Node(val)
             self.rear = self.rear.next
