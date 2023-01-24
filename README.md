@@ -30,4 +30,5 @@ To run your tests
 - [Code Challenge: Class 16](./python/docs/tree_max/README.md)
 - [Code Challenge: Class 17](./python/docs/tree_breadth_first/README.md)
 - [Code Challenge: Class 18](./python/docs/tree_fizz_buzz/README.md)
+- [Code Challenge: Class 26](./python/docs/insertion/README.md)
 
