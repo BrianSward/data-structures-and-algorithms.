@@ -32,4 +32,5 @@ To run your tests
 - [Code Challenge: Class 18](./python/docs/tree_fizz_buzz/README.md)
 - [Code Challenge: Class 26](sorting/insertion/README.md)
 - [Code Challenge: Class 27](sorting/merge/README.md)
+- [Code Challenge: Class 28](sorting/movie_sort/README.md)
 
