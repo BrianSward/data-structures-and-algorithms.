@@ -11,6 +11,8 @@ class LinkedList:
         self.head = a
         self.count += 1
 
+
+
     def append(self, value):
         """adds a new node with the given value to the end of the list"""
         a = Node(value)
