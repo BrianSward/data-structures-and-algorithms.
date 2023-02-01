@@ -34,3 +34,4 @@ To run your tests
 - [Code Challenge: Class 27](sorting/merge/README.md)
 - [Code Challenge: Class 28](sorting/movie_sort/README.md)
 - [Code Challenge: Class 31](./python/docs/hashtable_repeated_word/README.md)
+- [Code Challenge: Class 32](./python/docs/tree_intersection/README.md)
