@@ -14,7 +14,7 @@ def first_repeated_word(str):
     # break it up
     words = str.split()
     word_set = set()
-    # check for doubles
+    # check for doubles while fixing casing
     for word in words:
         if word.lower() in word_set:
             return word.lower()
