@@ -1,4 +1,4 @@
-from data_structures.binary_tree import BinaryTree, Node
+from python.data_structures.binary_tree import BinaryTree, Node
 
 
 def breadth_first(tree):
