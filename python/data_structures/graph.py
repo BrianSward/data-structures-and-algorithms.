@@ -3,6 +3,10 @@ class Vertex:
         self.value = value
         self.edges = {}
 
+class Edge:
+    def __init__(self, vertex, weight):
+        self.vertex = vertex
+        self.weight = weight
 
 class Graph:
     def __init__(self):
@@ -10,22 +14,19 @@ class Graph:
 
     def add_node(self, value):
         new_node = Vertex(value)
-        self.graph_dict[new_node.value] = Vertex(value)
+        self.graph_dict[new_node] = []
         return new_node
 
-    def add_edge(self, from_vertex, to_vertex, weight=0):
-        if from_vertex.value not in self.graph_dict:
-            self.add_vertex(from_vertex)
-        if to_vertex.value not in self.graph_dict:
-            self.add_vertex(to_vertex)
-        self.graph_dict[from_vertex.value].edges[to_vertex.value] = weight
-        self.graph_dict[to_vertex.value].edges[from_vertex.value] = weight
+    def add_edge(self, start, end, weight=0):
+        if end not in self.graph_dict:
+            raise KeyError("End vertex is not in the graph")
+        self.graph_dict[start].append(Edge(end, weight))
 
     def get_nodes(self):
         return list(self.graph_dict.keys())
 
     def get_neighbors(self, vertex):
-        return self.graph_dict[vertex.value].edges
+        return self.graph_dict[vertex]
 
     def size(self):
         return len(self.graph_dict)
@@ -45,10 +46,5 @@ if __name__ == "__main__":
 
     graph.add_edge(vertex_a, vertex_b, 5)
     print(graph.get_nodes())
-    print(list(graph.get_neighbors(vertex_a).keys()))
-    # graph.add_edge(vertex1, vertex4, 9)
-    # print(graph.get_neighbors("A"))
-    # graph.add_node(Vertex("spam"))
-    # print(graph.get_nodes())
-    # print(vertex_a.edges)
+
 
