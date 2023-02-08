@@ -1,5 +1,9 @@
-from python.code_challenges.movies_sort import movies, title_sort, year_sort
 import pytest
+try:
+    from python.code_challenges.movies_sort import movies, title_sort, year_sort
+except:
+    from code_challenges.movies_sort import movies, title_sort, year_sort
+
 
 # Expected test output of test #1
 expected1 = ["The Intouchables", "Valkyrie", "Stardust", "Ratatouille", "City of God", "Memento", "The Shawshank Redemption", "Beetlejuice", "Crocodile Dundee", "The Cotton Club"]

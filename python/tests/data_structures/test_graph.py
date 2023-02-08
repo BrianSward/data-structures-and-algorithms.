@@ -1,5 +1,8 @@
 import pytest
-from python.data_structures.graph import Graph, Vertex
+try:
+    from python.data_structures.graph import Graph, Vertex
+except:
+    from data_structures.graph import Graph, Vertex
 
 
 def test_exists():

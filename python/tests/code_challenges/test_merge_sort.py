@@ -1,5 +1,9 @@
 import pytest
-from python.code_challenges.merge_sort import merge, merge_sort
+try:
+    from python.code_challenges.merge_sort import merge, merge_sort
+except:
+    from code_challenges.merge_sort import merge, merge_sort
+
 
 
 # @pytest.mark.skip("TODO")

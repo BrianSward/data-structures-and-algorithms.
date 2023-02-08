@@ -1,6 +1,8 @@
 import pytest
-from python.code_challenges.hashtable_left_join import left_join
-
+try:
+    from python.code_challenges.hashtable_left_join import left_join
+except:
+    from code_challenges.hashtable_left_join import left_join
 
 def test_exists():
     assert left_join

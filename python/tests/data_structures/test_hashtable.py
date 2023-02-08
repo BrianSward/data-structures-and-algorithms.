@@ -1,5 +1,9 @@
 import pytest
-from python.data_structures.hashtable import Hashtable
+try:
+    from python.data_structures.hashtable import Hashtable
+except:
+    from data_structures.hashtable import Hashtable
+
 
 # @pytest.mark.skip("TODO")
 def test_exists():

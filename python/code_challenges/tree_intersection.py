@@ -1,5 +1,9 @@
-from python.data_structures.binary_tree import BinaryTree, Node
-from python.data_structures.queue import Queue
+try:
+    from python.data_structures.binary_tree import BinaryTree, Node
+    from python.data_structures.queue import Queue
+except:
+    from data_structures.binary_tree import BinaryTree, Node
+    from data_structures.queue import Queue
 
 
 def tree_intersection(t_one, t_two):
