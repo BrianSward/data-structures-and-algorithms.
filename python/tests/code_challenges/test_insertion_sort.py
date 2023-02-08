@@ -1,5 +1,8 @@
 import pytest
-from python.code_challenges.insertion_sort import insert_sort
+try:
+    from python.code_challenges.insertion_sort import insert_sort
+except:
+    from code_challenges.insertion_sort import insert_sort
 
 
 # @pytest.mark.skip("TODO")

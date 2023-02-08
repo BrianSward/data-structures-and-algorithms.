@@ -1,5 +1,7 @@
-from python.data_structures.hashtable import Hashtable
-
+try:
+    from python.data_structures.hashtable import Hashtable
+except:
+    from data_structures.hashtable import Hashtable
 
 def left_join(h_table_a, h_table_b):
     if not h_table_a:
