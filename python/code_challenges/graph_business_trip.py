@@ -30,51 +30,53 @@ def direct_flights(planets, names):
         if node == target:
             return True, cost
         # add where we started to the dictionary
+
         visited.add(node)
         # get all the n'bors of where we start
         for _edge in planets.get_neighbors(node):
             # if we haven't been there
             if _edge.vertex not in visited:
                 # look at next node, see if path exists
-                is_path, path_cost = dfs(_edge.vertex, target, cost + _edge.weight)
+                if dfs(_edge.vertex, target, cost + _edge.weight) is not None:
+                    is_path, path_cost = dfs(_edge.vertex, target, cost + _edge.weight)
                 # if out path exists return true/cost
                 if is_path:
                     return True, path_cost
         return False, 0
 
+    # **** WHERE I AM STRUGGLING ****
 
-    #
-    # for node_ in nodes:
-    #     for name in names:
-    #         print(dfs(node_, name, 0))
+    for node_ in nodes:
+        for name in names:
+            dfs(node_, name, 0)
 
     # # non-recursive way this checks for direct flights
-    if len(names) == 2:
-        # make nodes that we can compare if they are n'bors
-        node_1 = [node for node in nodes if node.value == names[0]][0]
-        node_2 = [node for node in nodes if node.value == names[1]][0]
-        # now we match
-        for __edge in planets.get_neighbors(node_1):
-            if __edge.vertex == node_2:
-                # if the node matches a value in the list
-                return True, __edge.weight
-        # no matches, return false and zero
-        return False, 0
-    # this checks for flights which have layovers, does the same as above but with three nodes
-    elif len(names) > 2:
-        node_1 = [node for node in nodes if node.value == names[0]][0]
-        node_2 = [node for node in nodes if node.value == names[1]][0]
-        node_3 = [node for node in nodes if node.value == names[2]][0]
-        # not happy with this, wonder if there is an easier way then nested if's
-        for edge_1 in planets.get_neighbors(node_1):
-            # here we compare and match
-            if edge_1.vertex == node_2:
-                # if we match we try the loop again
-                for edge_2 in planets.get_neighbors(node_2):
-                    if edge_2.vertex == node_3:
-                        # if it makes it through second loop we're good
-                        return True, edge_1.weight + edge_2.weight
-        return False, 0
+    # if len(names) == 2:
+    #     # make nodes that we can compare if they are n'bors
+    #     node_1 = [node for node in nodes if node.value == names[0]][0]
+    #     node_2 = [node for node in nodes if node.value == names[1]][0]
+    #     # now we match
+    #     for __edge in planets.get_neighbors(node_1):
+    #         if __edge.vertex == node_2:
+    #             # if the node matches a value in the list
+    #             return True, __edge.weight
+    #     # no matches, return false and zero
+    #     return False, 0
+    # # this checks for flights which have layovers, does the same as above but with three nodes
+    # elif len(names) > 2:
+    #     node_1 = [node for node in nodes if node.value == names[0]][0]
+    #     node_2 = [node for node in nodes if node.value == names[1]][0]
+    #     node_3 = [node for node in nodes if node.value == names[2]][0]
+    #     # not happy with this, wonder if there is an easier way then nested if's
+    #     for edge_1 in planets.get_neighbors(node_1):
+    #         # here we compare and match
+    #         if edge_1.vertex == node_2:
+    #             # if we match we try the loop again
+    #             for edge_2 in planets.get_neighbors(node_2):
+    #                 if edge_2.vertex == node_3:
+    #                     # if it makes it through second loop we're good
+    #                     return True, edge_1.weight + edge_2.weight
+    #     return False, 0
 
 
 if __name__ == "__main__":
@@ -114,4 +116,4 @@ if __name__ == "__main__":
     graph.add_edge(narnia, naboo, 250)
     graph.add_edge(naboo, narnia, 250)
     names__ = ["Arendelle", "New Monstropolis", "Naboo"]
-    direct_flights(graph, names__)
+    print(direct_flights(graph, names__))
