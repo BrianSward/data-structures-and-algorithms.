@@ -31,6 +31,18 @@ class Graph:
     def size(self):
         return len(self.graph_dict)
 
+    def depth_first_search(self, vertex):
+        visited = []
+        self.depth_first_helper(vertex, visited)
+        return visited
+
+    def depth_first_helper(self, vertex, visited):
+        if vertex not in self.graph_dict:
+            return
+        visited.append(vertex.value)
+        for edge in self.graph_dict[vertex]:
+            if edge.vertex.value not in visited:
+                self.depth_first_helper(edge.vertex, visited)
 
 if __name__ == "__main__":
     vertex1 = Vertex("A")
