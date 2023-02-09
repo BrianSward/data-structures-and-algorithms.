@@ -4,7 +4,7 @@ from data_structures.queue import Queue
 
 
 def fizz_buzz_tree(tree):
-    
+
     cloned = tree.clone()
     def helper(node):
         if node.children:

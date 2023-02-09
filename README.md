@@ -30,4 +30,12 @@ To run your tests
 - [Code Challenge: Class 16](./python/docs/tree_max/README.md)
 - [Code Challenge: Class 17](./python/docs/tree_breadth_first/README.md)
 - [Code Challenge: Class 18](./python/docs/tree_fizz_buzz/README.md)
-
+- [Code Challenge: Class 26](sorting/insertion/README.md)
+- [Code Challenge: Class 27](sorting/merge/README.md)
+- [Code Challenge: Class 28](sorting/movie_sort/README.md)
+- [Code Challenge: Class 31](./python/docs/hashtable_repeated_word/README.md)
+- [Code Challenge: Class 32](./python/docs/tree_intersection/README.md)
+- [Code Challenge: Class 33](./python/docs/hashtable_left_join/README.md)
+- [Code Challenge: Class 35](./python/docs/graph/README.md)
+- [Code Challenge: Class 37](./python/docs/graph_business_trip/README.md)
+- [Code Challenge: Class 38](./python/docs/graph_depth_first/README.md)
