@@ -16,6 +16,8 @@ def direct_flights(planets, names):
     visited = set()
     # let see all the places we may want to go
     nodes = planets.get_nodes()
+    # for node in nodes:
+    #     print(node.value.lower())
     # recursive way
 
     def dfs(node, target, cost):
@@ -27,7 +29,7 @@ def direct_flights(planets, names):
         :return: true and the cost if it exists or false and 0 if it doesn't
         """
         # covering base cases // stops our recursion
-        if node == target:
+        if node.value == target:
             return True, cost
         # add where we started to the dictionary
 
@@ -37,18 +39,31 @@ def direct_flights(planets, names):
             # if we haven't been there
             if _edge.vertex not in visited:
                 # look at next node, see if path exists
-                if dfs(_edge.vertex, target, cost + _edge.weight) is not None:
-                    is_path, path_cost = dfs(_edge.vertex, target, cost + _edge.weight)
+                is_path, path_cost = dfs(_edge.vertex, target, cost + _edge.weight)
                 # if out path exists return true/cost
                 if is_path:
                     return True, path_cost
         return False, 0
 
-    # **** WHERE I AM STRUGGLING ****
+    # sub task - go through nodes, find you starting location
+    # names[0]
+    # check for direct flight
+    # go through my nodes and find the starting point
+    origin = names[0]
+    for node in nodes:
+        if node == origin:
+            cost = dfs(node, names[1], 0)
+    return cost
 
-    for node_ in nodes:
-        for name in names:
-            dfs(node_, name, 0)
+
+
+
+
+    # **** WHERE I AM STRUGGLING ****
+    #
+
+    #     for name in names:
+    #         dfs(node_, name, 0)
 
     # # non-recursive way this checks for direct flights
     # if len(names) == 2:
@@ -82,38 +97,38 @@ def direct_flights(planets, names):
 if __name__ == "__main__":
     graph = Graph()
 
-    metroville = graph.add_node("Metroville")
-    pandora = graph.add_node("Pandora")
+    # metroville = graph.add_node("Metroville")
+    # pandora = graph.add_node("Pandora")
     arendelle = graph.add_node("Arendelle")
     new_monstropolis = graph.add_node("New Monstropolis")
     naboo = graph.add_node("Naboo")
-    narnia = graph.add_node("Narnia")
+    # narnia = graph.add_node("Narnia")
 
-    graph.add_edge(pandora, arendelle, 150)
-    graph.add_edge(arendelle, pandora, 150)
-
-    graph.add_edge(pandora, metroville, 82)
-    graph.add_edge(metroville, pandora, 82)
-
-    graph.add_edge(metroville, arendelle, 99)
-    graph.add_edge(arendelle, metroville, 99)
+    # graph.add_edge(pandora, arendelle, 150)
+    # graph.add_edge(arendelle, pandora, 150)
+    #
+    # graph.add_edge(pandora, metroville, 82)
+    # graph.add_edge(metroville, pandora, 82)
+    #
+    # graph.add_edge(metroville, arendelle, 99)
+    # graph.add_edge(arendelle, metroville, 99)
 
     graph.add_edge(new_monstropolis, arendelle, 42)
     graph.add_edge(arendelle, new_monstropolis, 42)
 
-    graph.add_edge(new_monstropolis, metroville, 105)
-    graph.add_edge(metroville, new_monstropolis, 105)
+    # graph.add_edge(new_monstropolis, metroville, 105)
+    # graph.add_edge(metroville, new_monstropolis, 105)
 
     graph.add_edge(new_monstropolis, naboo, 73)
     graph.add_edge(naboo, new_monstropolis, 73)
 
-    graph.add_edge(metroville, naboo, 26)
-    graph.add_edge(naboo, metroville, 26)
+    # graph.add_edge(metroville, naboo, 26)
+    # graph.add_edge(naboo, metroville, 26)
+    #
+    # graph.add_edge(metroville, narnia, 37)
+    # graph.add_edge(narnia, metroville, 37)
 
-    graph.add_edge(metroville, narnia, 37)
-    graph.add_edge(narnia, metroville, 37)
-
-    graph.add_edge(narnia, naboo, 250)
-    graph.add_edge(naboo, narnia, 250)
+    # graph.add_edge(narnia, naboo, 250)
+    # graph.add_edge(naboo, narnia, 250)
     names__ = ["Arendelle", "New Monstropolis", "Naboo"]
     print(direct_flights(graph, names__))
